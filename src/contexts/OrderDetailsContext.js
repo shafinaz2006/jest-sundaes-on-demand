@@ -3,7 +3,7 @@ import { createContext, useContext, useState, useMemo, useEffect } from "react";
 const OrderDetails = createContext();
 
 export const pricePerItem = {
-  scooops: 2,
+  scoops: 2,
   toppings: 1.5
 }
 
@@ -21,6 +21,14 @@ function calculateSubTotal(optionType, optionCounts){
     optionCount = optionCount + count;
   }
   return optionCount * pricePerItem[optionType];
+}
+
+export function formatCurrency(amount){
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+  }).format(amount);
 }
 
 export function OrderDetailsProvider(props){

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import ScoopOptions from "./ScoopOption";
 import ToppingOptions from './ToppingOption';
-import {useOrderDetails} from '../../contexts/OrderDetailsContext';
 
 const Options = ({optionType}) => {
   const [items, setItems] = useState([]);
@@ -20,7 +19,9 @@ const Options = ({optionType}) => {
 
   return(
     <div>
-      {optionType === 'scoops'? <ScoopOptions scoops={items} alert={alert}/>: <ToppingOptions toppings={items}alert={alert} /> }
+      {optionType === 'scoops'? 
+      <ScoopOptions scoops={items} alert={alert} />: 
+      <ToppingOptions toppings={items}alert={alert} /> }
     </div>
   )
 };

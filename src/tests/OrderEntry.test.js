@@ -2,6 +2,7 @@ import { render, screen, waitFor} from "@testing-library/react";
 import OrderEntry from "../pages/entry/OrderEntry";
 import {rest} from 'msw';
 import {server} from '../mocks/server';
+import {OrderDetailsProvider} from '../contexts/OrderDetailsContext';
 
 test('handles error for scoopes and toppings routes' , async() =>{
   server.resetHandlers(
@@ -12,7 +13,7 @@ test('handles error for scoopes and toppings routes' , async() =>{
       res(ctx.status(500))
     ),
   );
-  render(<OrderEntry />);
+  render(<OrderEntry />, {wrapper: OrderDetailsProvider });
   await waitFor(async() => {
     const alerts = await screen.findAllByRole('alert');
     expect(alerts).toHaveLength(2);
