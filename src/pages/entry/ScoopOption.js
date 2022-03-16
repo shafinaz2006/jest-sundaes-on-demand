@@ -1,6 +1,6 @@
 import React from "react";
 
-const ScoopOptions = ({scoops}) => {
+const ScoopOptions = ({scoops, alert}) => {
   return(
     <div>
       <h1>Design Your Sundae!</h1>
@@ -15,6 +15,7 @@ const ScoopOptions = ({scoops}) => {
           </div>
         ): ''
       }
+      {alert? <p role='alert'>An error occured. Please try again later</p>: null}
     </div>
   )
 };
