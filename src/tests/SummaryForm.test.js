@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import SummaryForm from './SummaryForm';
+import SummaryForm from '../pages/summary/SummaryForm';
 
 test('checkbox is unchecked by default and submit btn is disabled', () => {
   render(<SummaryForm />);

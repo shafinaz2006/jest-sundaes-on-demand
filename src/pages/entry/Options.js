@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import ScoopOptions from "./ScoopOption";
 import ToppingOptions from './ToppingOption';
+import {useOrderDetails} from '../../contexts/OrderDetailsContext';
 
 const Options = ({optionType}) => {
   const [items, setItems] = useState([]);

@@ -1,15 +1,16 @@
 import React from "react";
+import { pricePerItem } from "../../contexts/OrderDetailsContext";
 
 const ToppingOptions = ({toppings, alert}) => {
   return(
     <div>
-      <h1>Design Your Sundae!</h1>
       <h3>Toppings</h3>
-      <p>$0.50 each</p>
+      <p>${pricePerItem.toppings} each</p>
+      <div className='toppingsList'>
       {
         toppings.length > 0? 
         toppings.map((topping, i) => 
-          <div key={i}>
+          <div key={i} className='topping'>
             <p>{topping.name}</p>
             <img src={`http://localhost:3030${topping.imagePath}`} 
                  alt={`${topping.name}`} 
@@ -17,6 +18,7 @@ const ToppingOptions = ({toppings, alert}) => {
           </div>
         ): ''
       }
+      </div>
       {alert? <p role='alert'>An error occured. Please try again later</p>: null}
     </div>
   )

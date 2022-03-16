@@ -5,7 +5,7 @@ const OrderSummary = () => {
   
   return(
     <>
-    <h1>Design Your Sundae!</h1>
+      <h1>Design Your Sundae!</h1>
     </>
   )
 };
