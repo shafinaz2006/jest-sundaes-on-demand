@@ -1,6 +1,6 @@
 import React from "react";
 
-const ToppingOptions = ({toppings}) => {
+const ToppingOptions = ({toppings, alert}) => {
   return(
     <div>
       <h1>Design Your Sundae!</h1>
@@ -17,6 +17,7 @@ const ToppingOptions = ({toppings}) => {
           </div>
         ): ''
       }
+      {alert? <p role='alert'>An error occured. Please try again later</p>: null}
     </div>
   )
 };
