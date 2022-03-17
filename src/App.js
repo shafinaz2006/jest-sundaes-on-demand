@@ -11,7 +11,6 @@ function App() {
       <h1>Sundae order</h1>
       <OrderDetailsProvider>
         <OrderEntry />
-        
       </OrderDetailsProvider>
       <SummaryForm />
       {/* <OrderSummary /> */}

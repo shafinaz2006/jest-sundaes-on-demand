@@ -3,7 +3,7 @@ import Options from "./Options";
 import {useOrderDetails, formatCurrency} from '../../contexts/OrderDetailsContext';
 
 const OrderEntry = () => {
-  const [orderDetails, updateItemCount] = useOrderDetails();
+  const [orderDetails] = useOrderDetails();
 
   return(
     <div>

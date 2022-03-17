@@ -21,8 +21,6 @@ test('updates scoop subtotal when Chocolate scoop is changed' , async() =>{
   render(<Options optionType="scoops" />, {wrapper: OrderDetailsProvider });
   const scoopsSubTotal = screen.getByText('Scoops total', {exact: false});
   expect(scoopsSubTotal).toHaveTextContent('0.00');
-  const vanillaInput = await screen.findByLabelText('Vanilla scoop');
-  // userEvent.clear(vanillaInput);
   const chocolateInput = await screen.findByLabelText('Chocolate scoop');
   userEvent.clear(chocolateInput);
   userEvent.type(chocolateInput, '2');
