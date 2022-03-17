@@ -21,9 +21,10 @@ const OrderConfirmation = ({setOrderPhase}) => {
     orderNumber? 
     <div>
       <h1>Thank You!</h1>
-      <h3>Your order number is: 3434</h3>
+      <h3>Your order number is: {orderNumber}</h3>
       <button onClick={placeNewOrder}>Create new order</button>
-    </div>: <h2>Loading....</h2>
+    </div>
+    : <h2>Loading....</h2>
   );
 };
 

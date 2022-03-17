@@ -22,8 +22,10 @@ function App() {
     default:
   }
   return (
-    <OrderDetailsProvider>
-      {<Component setOrderPhase={setOrderPhase}/>}
+    <OrderDetailsProvider >
+      <div className='app'>
+        {<Component setOrderPhase={setOrderPhase}/>}
+      </div>
     </OrderDetailsProvider>
   );
 }
