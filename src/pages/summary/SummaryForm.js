@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+import { useOrderDetails, formatCurrency } from "../../contexts/OrderDetailsContext";
 
-const SummaryForm = () => {
+const SummaryForm = ({setOrderPhase}) => {
+  const [orderDetails] = useOrderDetails();
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [showAlert, setShowAlert] = useState(false);
   const changeSubmitBtn = () => {
@@ -15,6 +17,8 @@ const SummaryForm = () => {
   return(
     <>
       <h1>SummaryForm</h1>
+      <h2>Scoops: {formatCurrency(orderDetails.total.scoops)}</h2>
+      <h2>Toppings: {formatCurrency(orderDetails.total.toppings)}</h2>
       <div>
         <input type='checkbox' 
         label='accept' name='accept' 
@@ -33,7 +37,7 @@ const SummaryForm = () => {
             No ice cream will actually be delivered
           </span>: ''}
       </div>
-      <button disabled={btnDisabled}>Confirm order</button>
+      <button disabled={btnDisabled} onClick={() => setOrderPhase('completed')}>Confirm order</button>
 
     </>
   )
