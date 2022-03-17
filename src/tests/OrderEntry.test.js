@@ -4,7 +4,7 @@ import {rest} from 'msw';
 import {server} from '../mocks/server';
 import {OrderDetailsProvider} from '../contexts/OrderDetailsContext';
 
-test('handles error for scoopes and toppings routes' , async() =>{
+test('handles error for scoopes and toppings routes' , async () =>{
   server.resetHandlers(
     rest.get('http://localhost:3030/scoops', (req, res, ctx) => 
       res(ctx.status(500))
@@ -14,7 +14,7 @@ test('handles error for scoopes and toppings routes' , async() =>{
     ),
   );
   render(<OrderEntry />, {wrapper: OrderDetailsProvider });
-  await waitFor(async() => {
+  await waitFor(async () => {
     const alerts = await screen.findAllByRole('alert');
     expect(alerts).toHaveLength(2);
   })

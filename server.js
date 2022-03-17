@@ -29,14 +29,10 @@ app.get('/toppings', (req, res) => {
 
 app.post('/order', (req, res) => {
   // create a random order number
+  // return "order number" as the response
+  
   const orderNumber = Math.floor(Math.random() * 10000000000);
-
-  res
-    // set status to 201 (created)
-    .status(201)
-
-    // return "order number" as the response
-    .json({ orderNumber })
+  res.status(201).json({ orderNumber })
 })
 
 if (require.main === module) {

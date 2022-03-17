@@ -12,10 +12,10 @@ const Options = ({optionType}) => {
     .then(res => setItems(res.data))
     .catch(error => setAlert(true));
   }
+  
   useEffect(() =>{
     getScoops();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [optionType])
+  }, [])
 
   return(
     <div>
